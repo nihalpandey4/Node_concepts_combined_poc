@@ -15,18 +15,21 @@ user.init(
       validate: {
         notEmpty: true,
       },
+      allowNull:false
     },
     password: {
       type: DataTypes.STRING,
       validate: {
         notEmpty: true,
       },
+      allowNull:false
     },
     is_active: {
       type: DataTypes.BOOLEAN,
       validate: {
         notEmpty: true,
       },
+      allowNull:false
     },
   },
   { sequelize, modelName: 'user' },

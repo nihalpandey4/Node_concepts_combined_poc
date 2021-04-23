@@ -3,7 +3,7 @@ const sign_up =async (username,password)=>{
     return new Promise(async(resolve,reject)=>{
         try{
             let user ={
-                username:username,
+                name:username,
                 password:password,
                 is_active:true
             }
