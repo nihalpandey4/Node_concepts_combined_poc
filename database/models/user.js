@@ -10,12 +10,13 @@ user.init(
       primaryKey: true,
       allowNull: false,
     },
-    name: {
+    username: {
       type: DataTypes.STRING,
       validate: {
-        notEmpty: true,
+        notEmpty: true
       },
-      allowNull:false
+      allowNull:false,
+      unique:true
     },
     password: {
       type: DataTypes.STRING,
