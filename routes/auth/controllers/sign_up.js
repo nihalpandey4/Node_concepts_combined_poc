@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
   catch(err){
       res.json({
           status:false,
-          message:"user not added"
+          message:err.message
       })
   }
 }
