@@ -12,7 +12,7 @@ module.exports = async(req,res)=>{
     }
     catch(err){
         res.json({
-            status: error,
+            status: false,
             message:err.message
         })
     }
