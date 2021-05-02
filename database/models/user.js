@@ -1,6 +1,8 @@
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../db_connection_initializer')
 
+const user_session_model = require("./user_session");
+
 class user extends Model {}
 user.init(
   {
@@ -35,5 +37,15 @@ user.init(
   },
   { sequelize, modelName: 'user' },
 )
+
+user.hasOne(user_session_model,{
+  onDelete:"cascade",
+  foreignKey:{
+    name:"user_id",
+    allowNull:false
+  }
+})
+
+user_session_model.belongsTo(user);
 
 module.exports = user
