@@ -3,16 +3,15 @@ const sign_up =async (username,password)=>{
     return new Promise(async(resolve,reject)=>{
         try{
             let user ={
-                name:username,
+                username:username,
                 password:password,
                 is_active:true
             }
             const response  = await user_model.build(user).save();
-            console.log(response);
-            resolve({message:response})
+            resolve({userid:response.id,username:response.username})
         }
         catch(err){
-            reject({message:err.message})
+            reject({message:err.errors[0].message})
         }
     })
 }
