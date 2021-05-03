@@ -2,7 +2,7 @@
   "development": {
     "username": "nihal",
     "password": "nkpandey",
-    "database": "sequalize_poc",
+    "database": "sequelize_poc",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

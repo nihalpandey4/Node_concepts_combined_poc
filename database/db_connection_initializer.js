@@ -1,4 +1,4 @@
-const mysql2 = require('mysql2');
+const mysql = require('mysql');
 const config=require('../config/config.json')["development"]
 const { Sequelize } = require('sequelize');
 
@@ -13,7 +13,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 });
 
 
-const con_init = mysql2.createConnection({
+const con_init = mysql.createConnection({
   host: config.host,
   user: config.username,
   password: config.password,

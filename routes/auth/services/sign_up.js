@@ -25,7 +25,7 @@ const sign_up =async (username,password)=>{
             resolve({userid:response.id,username:response.username})
         }
         catch(err){
-            reject({message:err.errors[0].message})
+            reject(err)
         }
     })
 }

@@ -6,10 +6,11 @@ const post_model = require("./models/posts")
 
 const db_generator = ()=>{
     db_connection_initializer.sync()
-    .then(()=>{
-        user_model.bulkCreate([]);
-        user_session_model.bulkCreate([]);
-        post_model.bulkCreate([]);
+    .then(async()=>{
+        console.log("database created");
+        await post_model.bulkCreate([]);
+        await user_model.bulkCreate([]);
+        await user_session_model.bulkCreate([]);
     })
     .catch(ex=>{
         console.log(ex.message);
