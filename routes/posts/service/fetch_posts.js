@@ -18,3 +18,5 @@ const fetch_posts = async(user_id)=>{
         }
     })
 }
+
+module.exports = fetch_posts;
