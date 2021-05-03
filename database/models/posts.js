@@ -36,7 +36,7 @@ post.init(
       allowNull: false,
     },
   },
-  { sequelize, modelName: 'user_session' },
+  { sequelize, modelName: 'post' },
 )
 
 user_model.hasMany(post,{
