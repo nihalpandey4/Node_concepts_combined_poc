@@ -42,11 +42,16 @@ post.init(
 user_model.hasMany(post,{
     onDelete:"cascade",
     foreignKey:{
-        name:"created_by_user_id",
+        name:"user_id",
         allowNull:false
     }
 })
 
-post.belongsTo(user_model);
+post.belongsTo(user_model,{
+  foreignKey:{
+    name:"user_id",
+    allowNull:false
+  }
+});
 
 module.exports = post;

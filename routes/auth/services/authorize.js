@@ -15,6 +15,15 @@ module.exports=async(req,res,next)=>{
             user_id: user_session.user.id,
             username: user_session.user.username,
         }
+        const _user = await user_model.findOne({
+            where:{
+                id:user_session.user.id
+            },
+            include:[{
+                model:user_session_model
+            }]
+        })
+        console.log(_user);
         next();
     }
     else{
