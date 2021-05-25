@@ -6,7 +6,7 @@ const create_post = async(heading,content,user_id)=>{
             let post = {
                 heading:heading,
                 content:content,
-                created_by_user_id:user_id,
+                user_id:user_id,
                 is_active:true
             }
             const response = await post_model.build(post).save();
